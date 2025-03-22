@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 # Meus apps
 INSTALLED_APPS +=[
-    'produtos',
+    'produtos', 
+    'widget_tweaks'
 ]
 
 
