@@ -1,31 +1,24 @@
-{% extends 'base.html' %} 
-{% load widget_tweaks %}
+{% extends 'base.html' %}{% load widget_tweaks %}{% block conteudo %}
 
-{% block conteudo %}
 <div class="container">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1>Cadastro/Atualização de Produtos</h1>
+  </div>  
 
-        <h1>Cadastro/Atualização de Produtos</h1>
-    </div>
-
-
-<div class="card shadow mb-4">
+  <div class="card shadow mb-4">
     <div class="card-body">
-        <h4> Formulário para registro de novos Produtos</h4>
+      <h4> Formulario para registro de novos Produtos</h4>
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %} 
-    
-    <!--{{ form.as_p }} -->
-     {% for field in form %}
-<label> {{field.label}} {% if field.field.required %} * {%endif%}</label>
-{% render_field field placeholder=field.label class='form-control'%}
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}     
 
-     {% endfor %}
-    <input type="submit" class="btn btn-primary w-100" />
-</form>
-        </div>
+        {% for  field in form %}
+          <label> {{field.label}} {% if field.field.required %} * {%endif%}</label>
+          {% render_field field placeholder=field.label class='form-control'%}
+        {% endfor %}
+        <input type="submit" class="btn btn-primary w-100" />
+      </form>
     </div>
+  </div>
 </div>
-
 {%endblock conteudo%}
